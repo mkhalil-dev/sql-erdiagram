@@ -17,3 +17,7 @@ WHERE S.id NOT IN (SELECT E.students_id FROM enrolled E);
 SELECT *
 FROM students S, enrolled E, courses C, majorsIn MI, departments D
 WHERE C.crn = E.courses_crn AND S.id = E.students_id AND MI.students_id = S.id AND Mi.depart_id = D.id AND C.name ="CSC275" AND D.name = "CS";
+
+SELECT DISTINCT S.name
+FROM students S, enrolled E, courses C, majorsIn MI, departments D
+WHERE C.crn = E.courses_crn AND S.id = E.students_id AND MI.students_id = S.id AND Mi.depart_id = D.id AND D.name = "CS"
